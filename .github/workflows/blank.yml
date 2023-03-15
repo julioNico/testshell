@@ -32,8 +32,8 @@ jobs:
         # with:
         #   since_last_remote_commit: true 
 
-      - name: Echo template
-        run: echo ${{ steps.changed-files.outputs.all_changed_files }}
+      - name: get dirname
+        run: dirname ${{ steps.changed-files.outputs.all_changed_files }} | sort -u
 
       - name: List all changed files
         run: |
